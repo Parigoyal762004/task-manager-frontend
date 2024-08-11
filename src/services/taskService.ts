@@ -1,7 +1,8 @@
 import axios from 'axios';
 import { Task } from '../types'; 
 
-const API_URL = 'https://task-manager-backend-3-n52o.onrender.com/tasks'; // Ensure the endpoint is correct
+// Replace with your Render backend URL
+const API_URL = 'https://task-manager-backend-3-n52o.onrender.com/tasks';
 
 export const getTasks = async () => {
   try {
@@ -15,7 +16,7 @@ export const getTasks = async () => {
 
 export const createTask = async (task: Omit<Task, 'id'>): Promise<Task> => {
   try {
-    const response = await axios.post(API_URL, task);  // Updated to use API_URL
+    const response = await axios.post(API_URL, task);
     return response.data;
   } catch (error) {
     console.error('Error creating task:', error);
